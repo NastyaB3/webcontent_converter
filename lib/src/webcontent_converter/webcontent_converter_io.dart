@@ -186,7 +186,7 @@ class WebcontentConverter {
       'duration': duration,
       'scale': scale,
       'width': width,
-      'height: height,
+      'height': height,
     };
     Uint8List results = Uint8List.fromList([]);
 
