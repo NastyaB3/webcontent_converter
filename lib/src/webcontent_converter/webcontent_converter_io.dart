@@ -178,11 +178,15 @@ class WebcontentConverter {
     double duration = 2000,
     String? executablePath,
     int scale = 3,
+    double? width, 
+    double? height,
   }) async {
     final Map<String, dynamic> arguments = {
       'content': content,
       'duration': duration,
       'scale': scale,
+      'width': width,
+      'height: height,
     };
     Uint8List results = Uint8List.fromList([]);
 
