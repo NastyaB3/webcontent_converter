@@ -142,6 +142,8 @@ class WebcontentConverter {
     String? executablePath,
     bool autoClosePage = true,
     int scale = 3,
+    double? width, 
+    double? height,
   }) async {
     var div = html.document.createElement('div') as html.DivElement;
     div.setInnerHtml(content, validator: AllowAll());
