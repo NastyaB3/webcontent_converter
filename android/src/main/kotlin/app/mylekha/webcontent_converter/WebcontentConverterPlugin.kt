@@ -65,8 +65,8 @@ class WebcontentConverterPlugin : FlutterPlugin, MethodCallHandler, ActivityAwar
             "contentToImage" -> {
                 print("\n activity $activity")
                 webView = WebView(this.context)
-                val dwidth = width ?: this.activity.window.windowManager.defaultDisplay.width
-                val dheight = height ?: this.activity.window.windowManager.defaultDisplay.height
+                val dwidth = width?.toInt() ?: this.activity.window.windowManager.defaultDisplay.width
+                val dheight = height?.toInt() ?: this.activity.window.windowManager.defaultDisplay.height
                 print("\ndwidth : $dwidth")
                 print("\ndheight : $dheight")
                 webView.layout(0, 0, dwidth, dheight)
