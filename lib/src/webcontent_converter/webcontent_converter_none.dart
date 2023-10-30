@@ -86,6 +86,8 @@ class WebcontentConverter {
     String? executablePath,
     bool autoClosePage = true,
     int scale = 3,
+    double? width, 
+    double? height,
   }) async {
     UnimplementedError('contentToImage');
     return Future.value(Uint8List.fromList([]));
