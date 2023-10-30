@@ -54,6 +54,8 @@ class WebcontentConverterPlugin : FlutterPlugin, MethodCallHandler, ActivityAwar
         val arguments = call.arguments as Map<*, *>
         val content = arguments["content"] as String
         var duration = arguments["duration"] as Double?
+        var width = arguments["width"] as Double?
+        var height = arguments["height"] as Double?
         var savedPath = arguments["savedPath"] as? String
         var margins = arguments["margins"] as Map<String, Double>?
         var format = arguments["format"] as Map<String, Double>?
@@ -63,8 +65,8 @@ class WebcontentConverterPlugin : FlutterPlugin, MethodCallHandler, ActivityAwar
             "contentToImage" -> {
                 print("\n activity $activity")
                 webView = WebView(this.context)
-                val dwidth = this.activity.window.windowManager.defaultDisplay.width
-                val dheight = this.activity.window.windowManager.defaultDisplay.height
+                val dwidth = width ?: this.activity.window.windowManager.defaultDisplay.width
+                val dheight = height ?: this.activity.window.windowManager.defaultDisplay.height
                 print("\ndwidth : $dwidth")
                 print("\ndheight : $dheight")
                 webView.layout(0, 0, dwidth, dheight)
